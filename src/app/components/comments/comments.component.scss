@@ -1,0 +1,47 @@
+.postDiv {
+  background-color: rgb(10, 92, 92);
+}
+
+form {
+  background-color: #fff;
+}
+
+.formDiv {
+  margin: 0px 20px 0px 20px;
+}
+
+.addImageBtn {
+  margin-bottom: 5px;
+}
+
+.postBtn {
+  margin-bottom: 5px;
+  background-color: rgb(10, 92, 92);
+  ;
+}
+
+.title {
+  font-weight: bold;
+  color: rgb(10, 92, 92);
+}
+
+.time {
+  font-size: 14px;
+  color: #666565;
+}
+
+.postComment {
+  font-size: 15px;
+}
+
+.postLi {
+  background-color: rgb(10, 92, 92);
+  color: white;
+  padding: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

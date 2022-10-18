@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.scss']
+  selector: 'app-top-streams',
+  templateUrl: './top-streams.component.html',
+  styleUrls: ['./top-streams.component.scss']
 })
-export class PostsComponent implements OnInit {
+export class TopStreamsComponent implements OnInit {
 
   socket: any;
-  posts: any = [];
+  topPosts: any = [];
   user: any;
   constructor(private postService: PostService, private tokenService: TokenService, private router: Router) {
     this.socket = io("http://localhost:4500", { transports: ['websocket'] });
@@ -31,7 +31,7 @@ export class PostsComponent implements OnInit {
 
   getAllPosts() {
     this.postService.getAllPosts().subscribe(data => {
-      this.posts = data.posts;
+      this.topPosts = data.top;
       // console.log(this.posts);
     }, err => {
       if (err.error.token == null) {

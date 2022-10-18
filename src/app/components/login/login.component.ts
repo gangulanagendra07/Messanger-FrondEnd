@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.showSpinner = true;
     this.authService.login(this.loginForm.value).subscribe((userData) => {
+      // console.log(userData);
       this.tokenService.SetToken(userData.token);
       this.loginForm.reset();
       setTimeout(() => {

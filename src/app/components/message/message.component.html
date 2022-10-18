@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="card">
+        <div class="valign-wrapper" style="background-color: rgb(10, 92, 92) !important">
+          <div class="col s12 imgCol">
+            <img src="http://placehold.it/50*50" class="circle responsive-img" />
+          </div>
+          <div class="row">
+            <div class="col s12 nameCol">
+              <span>{{ receiver }}</span>
+              <p class="isOnline">Online</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 rowDiv">
+    <div class="row">
+      <div class="col s12">
+        <div class="message-wrapper" *ngFor="let message of messagesArray">
+          <div class="left" *ngIf="user.username !== receiver && user.username !== message.sendername">
+            <div class="chat-bubble left side-left">
+              <div class="message">{{ message.body }}</div>
+            </div>
+          </div>
+          <div class="right" *ngIf="user.username === message.sendername">
+            <div class="chat-bubble right side-right">
+              <div class="message">{{ message.body }}</div>
+            </div>
+          </div>
+          <div class="cf"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12" style="margin: 0px">
+    <div class="row">
+      <div class="card" style="height: 55px">
+        <div class="inputRow">
+          <form (ngSubmit)="SendMessage()">
+            <div class="input-field inputField col s10">
+              <textarea
+                name="message"
+                [(ngModel)]="message"
+                placeholder="typing message"
+                class="materialize-textarea inputBox"
+              ></textarea>
+            </div>
+            <div class="input-field col s1 emojiDiv">
+              <button class="emojiBtn">Emoji</button>
+            </div>
+            <div class="input-field col s1 send">
+              <button class="suffix btn">
+                <i class="material-icons">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

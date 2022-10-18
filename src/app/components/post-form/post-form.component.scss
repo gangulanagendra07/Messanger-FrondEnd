@@ -1,5 +1,5 @@
 .postDiv {
-  background-color: #64b5f6;
+  background-color: rgb(10, 92, 92);
 }
 
 form {
@@ -16,7 +16,16 @@ form {
 
 .postBtn {
   float: right;
+  background-color: rgb(10, 92, 92);
   margin-bottom: 5px;
+}
+
+.imgSpan i {
+  background-color: rgb(10, 92, 92);
+}
+
+.btn {
+  background-color: rgb(10, 92, 92);
 }
 
 .file-field input[type='file'] {

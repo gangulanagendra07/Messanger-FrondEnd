@@ -8,11 +8,12 @@ import { TokenService } from './services/token.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+  token: any;
   constructor(private router: Router, private tokenService: TokenService) { }
   ngOnInit(): void {
-    const token = this.tokenService.GetToken();
-    if (token) {
+    this.token = this.tokenService.GetToken();
+
+    if (this.token) {
       this.router.navigate(['streams'])
     } else {
       this.router.navigate(['/']);

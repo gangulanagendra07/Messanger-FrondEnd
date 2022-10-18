@@ -1,5 +1,5 @@
 nav {
-  background-color: #64b5f6;
+  background-color: rgb(10, 92, 92);
 }
 
 .brand-logo {
@@ -8,7 +8,7 @@ nav {
 }
 
 .navDiv {
-  background-color: #64b5f6;
+  background-color: rgb(10, 92, 92);
 }
 
 .nav-content {
@@ -76,14 +76,14 @@ nav {
 }
 
 .title {
-  color: #64b5f6;
+  color: rgb(10, 92, 92);
   margin: 0px !important;
   padding: 0px !important;
   font-weight: normal;
 }
 
 .isRead {
-  color: #64b5f6;
+  color: rgb(10, 92, 92);
   margin: 0px !important;
   padding: 0px !important;
   font-weight: normal;
@@ -103,10 +103,12 @@ nav {
 
 .text {
   text-align: center;
+  font-size: 25px !important;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .material-icons {
-  color: #64b5f6 !important;
+  color: rgb(10, 92, 92) !important;
   cursor: pointer;
 }
 
@@ -116,9 +118,22 @@ nav {
 
 .markAll {
   color: #ffffff;
-  background: #64b5f6 !important;
+  background: rgb(10, 92, 92) !important;
 }
 
 li.dropdown-button {
   margin-left: 20px !important;
+}
+
+.messanger {
+  cursor: pointer;
+}
+
+.nav-wrapper ul li a {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.notification {
+  line-height: revert;
 }
