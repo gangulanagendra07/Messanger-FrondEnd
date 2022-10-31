@@ -187,6 +187,12 @@ emoji-content {
 .emojiDiv {
   width: 40px !important;
   margin-bottom: 0px !important;
+  display: flex;
+  flex-direction: row-reverse;
+
+  span {
+    font-size: 25px;
+  }
 }
 
 .imgCircle {

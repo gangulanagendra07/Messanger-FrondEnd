@@ -55,7 +55,8 @@
               ></textarea>
             </div>
             <div class="input-field col s1 emojiDiv">
-              <button class="emojiBtn">Emoji</button>
+              <span (click)="isEmojiPickerVisible = !isEmojiPickerVisible">😀</span>
+              <emoji-mart class="emoji-mart" *ngIf="isEmojiPickerVisible" (emojiSelect)="addEmoji($event)"></emoji-mart>
             </div>
             <div class="input-field col s1 send">
               <button class="suffix btn">

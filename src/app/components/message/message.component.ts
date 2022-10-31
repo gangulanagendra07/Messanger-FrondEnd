@@ -14,12 +14,14 @@ export class MessageComponent implements OnInit, AfterViewInit {
 
   receiver: any;
   user: any;
-  message: any;
+  message: any = "";
   receiverData: any = [];
   messagesArray: any = [];
   socket: any;
+  emoji: any;
   typingMessage: any;
   typing: boolean = false;
+  isEmojiPickerVisible: boolean | undefined;
 
   constructor(private tokenService: TokenService, private messageService: MessageService, private route: ActivatedRoute, private userService: UsersService) {
     this.socket = io('http://localhost:4500', { transports: ['websocket'] });
@@ -61,6 +63,11 @@ export class MessageComponent implements OnInit, AfterViewInit {
       this.receiverData = data.results;
       this.GetAllMessages(this.user._id, data.results._id);
     })
+  }
+
+  addEmoji(event: any) {
+    this.message = `${this.message}${event.emoji.native}`;
+    this.isEmojiPickerVisible = false;
   }
 
   IsTyping() {

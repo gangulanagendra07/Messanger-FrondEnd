@@ -32,7 +32,10 @@
             ],
             "styles": [
               "./node_modules/materialize-css/dist/css/materialize.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@ctrl/ngx-emoji-mart/picker.css"
+
+
             ],
             "scripts": [
               "./node_modules/materialize-css/dist/js/materialize.js"
