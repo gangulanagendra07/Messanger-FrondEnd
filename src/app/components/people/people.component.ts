@@ -19,6 +19,7 @@ export class PeopleComponent implements OnInit {
   users: any = [];
   userArray: any = [];
   socket: any;
+  onlineUsers: any = [];
   // loggedUser: any;
   constructor(private tokenService: TokenService, private router: Router, private userService: UsersService) {
     this.socket = io('http://localhost:4500', { transports: ['websocket'] });
@@ -63,6 +64,19 @@ export class PeopleComponent implements OnInit {
   CheckedArray(arr: any, id: any) {
     const result = _.find(arr, ['userFollowed._id', id]);
     if (result) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  online(event: any) {
+    this.onlineUsers = event;
+  }
+
+  checkIfOnline(name: any) {
+    const result = _.indexOf(this.onlineUsers, name);
+    if (result > -1) {
       return true;
     }
     else {

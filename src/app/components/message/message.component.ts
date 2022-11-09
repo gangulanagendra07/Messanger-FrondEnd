@@ -1,17 +1,20 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from 'src/app/services/message.service';
 import { TokenService } from 'src/app/services/token.service';
 import { UsersService } from 'src/app/services/users.service';
 import io from 'socket.io-client';
+import * as _ from 'lodash';
+
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss']
 })
-export class MessageComponent implements OnInit, AfterViewInit {
-
+export class MessageComponent implements OnInit, AfterViewInit, OnChanges {
+  @Input() users: any;
+  // usersArray: any = [];
   receiver: any;
   user: any;
   message: any = "";
@@ -20,6 +23,7 @@ export class MessageComponent implements OnInit, AfterViewInit {
   socket: any;
   emoji: any;
   typingMessage: any;
+  isOnline: any = false;
   typing: boolean = false;
   isEmojiPickerVisible: boolean | undefined;
 
@@ -36,6 +40,8 @@ export class MessageComponent implements OnInit, AfterViewInit {
         this.getUserByName(this.receiver);
       })
     });
+    // this.usersArray = this.users;
+    // console.log(this.usersArray);
     this.socket.on('is_typing', (_data: any) => {
       if (_data.sender === this.receiver) {
         this.typing = true;
@@ -48,6 +54,16 @@ export class MessageComponent implements OnInit, AfterViewInit {
       }
     })
 
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.users.currentValue.length > 0) {
+      const result = _.indexOf(changes.users.currentValue, this.receiver);
+      if (result > -1) {
+        this.isOnline = true;
+      } else {
+        this.isOnline = false;
+      }
+    }
   }
   ngAfterViewInit(): void {
     const params = {
