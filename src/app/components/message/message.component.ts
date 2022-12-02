@@ -77,6 +77,7 @@ export class MessageComponent implements OnInit, AfterViewInit, OnChanges {
   getUserByName(name: any) {
     this.userService.GetUserByName(name).subscribe(data => {
       this.receiverData = data.results;
+      // console.log(this.receiverData);
       this.GetAllMessages(this.user._id, data.results._id);
     })
   }

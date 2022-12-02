@@ -29,7 +29,7 @@ export class FollowersComponent implements OnInit {
   GetUser() {
     this.userService.GetUserById(this.token._id).subscribe((data) => {
       this.followers = data.results.followers;
-      console.log(data)
+      // console.log(data)
     }, err => {
       console.log(err);
     })

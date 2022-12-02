@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FileUploadModule } from 'ng2-file-upload';
+import { NgxAutoScrollModule } from "ngx-auto-scroll";
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 import { StreamComponent } from '../components/stream/stream.component';
 import { TokenService } from '../services/token.service';
 import { ToolbarComponent } from '../components/toolbar/toolbar.component';
@@ -20,29 +24,29 @@ import { NotificationsComponent } from '../components/notifications/notification
 import { TopStreamsComponent } from '../components/top-streams/top-streams.component';
 import { ChatComponent } from '../components/chat/chat.component';
 import { MessageComponent } from '../components/message/message.component';
-import { NgxAutoScrollModule } from "ngx-auto-scroll";
-import { PickerModule } from '@ctrl/ngx-emoji-mart';
-import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
-
-
-
+import { ImagesComponent } from '../components/images/images.component';
+import { UnauthorizedComponent } from '../components/unauthorized/unauthorized.component';
+import { ViewUserComponent } from '../components/view-user/view-user.component';
 
 
 @NgModule({
   declarations: [
-    StreamComponent,
-    ToolbarComponent,
-    SideComponent,
-    PostFormComponent,
-    PostsComponent,
-    CommentsComponent,
-    PeopleComponent,
-    FollowingComponent,
-    FollowersComponent,
-    NotificationsComponent,
-    TopStreamsComponent,
-    ChatComponent,
-    MessageComponent
+    // StreamComponent,
+    // ToolbarComponent,
+    // SideComponent,
+    // PostFormComponent,
+    // PostsComponent,
+    // CommentsComponent,
+    // PeopleComponent,
+    // FollowingComponent,
+    // FollowersComponent,
+    //NotificationsComponent,
+    // // TopStreamsComponent,
+    // ChatComponent,
+    // MessageComponent,
+    // ImagesComponent,
+    UnauthorizedComponent,
+    // ViewUserComponent
   ],
   imports: [
     CommonModule,
@@ -52,22 +56,26 @@ import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
     ReactiveFormsModule,
     NgxAutoScrollModule,
     PickerModule,
-    EmojiModule
+    EmojiModule,
+    FileUploadModule
   ],
   exports: [
-    StreamComponent,
-    ToolbarComponent,
-    SideComponent,
-    PostFormComponent,
-    PostsComponent,
-    CommentsComponent,
-    PeopleComponent,
-    FollowingComponent,
-    FollowersComponent,
-    NotificationsComponent,
-    TopStreamsComponent,
-    ChatComponent,
-    MessageComponent
+    // StreamComponent,
+    // ToolbarComponent,
+    // SideComponent,
+    // PostFormComponent,
+    // PostsComponent,
+    // CommentsComponent,
+    // PeopleComponent,
+    // FollowingComponent,
+    // FollowersComponent,
+    //NotificationsComponent,
+    // TopStreamsComponent,
+    // ChatComponent,
+    // MessageComponent,
+    // ImagesComponent,
+    UnauthorizedComponent,
+    // ViewUserComponent
   ],
   providers: [TokenService, PostService, UsersService, MessageService]
 })

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import { TokenService } from 'src/app/services/token.service';
 import * as moment from 'moment';
 import io from 'socket.io-client';
 import * as _ from 'lodash';
-import { Router } from '@angular/router';
+
+
 
 
 @Component({
@@ -14,9 +16,11 @@ import { Router } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
 
+
   socket: any;
   posts: any = [];
   user: any;
+
   constructor(private postService: PostService, private tokenService: TokenService, private router: Router) {
     this.socket = io("http://localhost:4500", { transports: ['websocket'] });
   }
@@ -32,7 +36,7 @@ export class PostsComponent implements OnInit {
   getAllPosts() {
     this.postService.getAllPosts().subscribe(data => {
       this.posts = data.posts;
-      // console.log(this.posts);
+      console.log(data);
     }, err => {
       if (err.error.token == null) {
         this.tokenService.DeleteToken();
@@ -42,7 +46,7 @@ export class PostsComponent implements OnInit {
   }
   LikePost(post: any) {
     this.postService.addLike(post).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.socket.emit('refresh', {});
     }, err => {
       console.log(err);

@@ -43,4 +43,18 @@ export class UsersService {
       all: true
     })
   }
+  AddImage(image: any): Observable<any> {
+    return this.http.post(`${this.BASE_URL}/upload-image`, {
+      image
+    })
+  }
+  SetDefaultImage(imgId: any, imgVersion: any): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/set-default-image/${imgId}/${imgVersion}`);
+  }
+  ProfileNotification(id: any): Observable<any> {
+    return this.http.post(`${this.BASE_URL}/view-profile`, { id });
+  }
+  ChangePassword(body: any): Observable<any> {
+    return this.http.post(`${this.BASE_URL}/change-password`, body);
+  }
 }

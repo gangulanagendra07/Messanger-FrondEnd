@@ -39,6 +39,8 @@
 .imgCircle {
   width: 150px !important;
   height: 150px !important;
+  color: rgb(53, 168, 53);
+  background-color: rgb(53, 168, 53);
   border-radius: 50% !important;
   margin: 0 auto !important;
   top: 20px !important;
@@ -60,12 +62,20 @@
   color: #64b5f6 !important;
 }
 
-// .rowUl {
-//   background: #ffffff !important;
-//   height: 61vh !important;
-//   max-height: 62vh !important;
-//   min-height: 50vh !important;
-//   overflow-y: scroll !important;
-//   top: 0px;
-//   margin-top: -20px !important;
-// }
+.scroll-y {
+  background: #ffffff !important;
+  height: 100vh !important;
+  max-height: 62vh !important;
+  min-height: 50vh !important;
+  overflow-y: scroll !important;
+  top: 0px;
+  margin-top: -20px !important;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: rgb(45, 175, 66);
+  border-radius: 50%;
+  display: inline-block;
+}

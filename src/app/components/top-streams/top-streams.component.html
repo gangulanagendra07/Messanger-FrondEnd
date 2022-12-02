@@ -1,7 +1,13 @@
 <section class="rowUl">
   <ul class="collection col s12 m12 l10" *ngFor="let post of topPosts">
     <li class="collection-item avatar">
-      <img src="https://cdn.britannica.com/56/148856-004-2F59E2D9/APJ-2008.jpg" alt="" class="circle" />
+      <img
+        src="https://res.cloudinary.com/dgthwirla/image/upload/s--V48z2Bz0--/v{{ post.user.picVersion }}/{{
+          post.user.picId
+        }}"
+        alt=""
+        class="circle"
+      />
       <span class="title">{{ post.username }}</span>
       <p class="time">
         {{ TimeFromNow(post.created) }} <br />

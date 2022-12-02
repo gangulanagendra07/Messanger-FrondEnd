@@ -25,7 +25,7 @@ a {
 
 .num {
   margin: 0 !important;
-  color: rgb(10, 92, 92);
+  color: rgba(114, 141, 141, 0.884);
   font-weight: bold;
   font-size: 16px;
 }
@@ -33,4 +33,26 @@ a {
 .row span {
   font-size: 15px;
   font-weight: bold;
+}
+
+.collection-item {
+  border: 0.5px solid #f1eeee;
+  box-shadow: #cac3c3;
+}
+
+.side-row {
+  color: #cac3c3;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.side-row span {
+  color: rgba(9, 54, 54, 0.884);
+}
+
+.with-header {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+
 }

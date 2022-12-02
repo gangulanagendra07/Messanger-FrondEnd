@@ -4,7 +4,7 @@
     <div class="col s12 m4 l3">
       <app-side></app-side>
     </div>
-    <div class="col s12 m8 l9">
+    <div class="col s12 m8 l9 scroll-y">
       <div class="row" *ngIf="following.length > 0">
         <div class="col s12 m6 l4 cardDiv" *ngFor="let user of following">
           <div class="card">
@@ -12,7 +12,9 @@
               <div class="card-image imgDiv">
                 <img
                   class="imgCircle responsive-img"
-                  src="https://cdn.britannica.com/56/148856-004-2F59E2D9/APJ-2008.jpg"
+                  src="https://res.cloudinary.com/dgthwirla/image/upload/s--V48z2Bz0--/v{{
+                    user.userFollowed.picVersion
+                  }}/{{ user.userFollowed.picId }}"
                 />
               </div>
             </a>

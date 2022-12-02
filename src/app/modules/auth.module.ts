@@ -11,9 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AuthTabsComponent,
-    LoginComponent,
-    SignupComponent
+    // AuthTabsComponent,
+    // LoginComponent,
+    // SignupComponent
   ],
   imports: [
     CommonModule,
@@ -22,9 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports: [
-    AuthTabsComponent,
-    LoginComponent,
-    SignupComponent
+    // AuthTabsComponent,
+    // LoginComponent,
+    // SignupComponent
   ],
   providers: [AuthService]
 })

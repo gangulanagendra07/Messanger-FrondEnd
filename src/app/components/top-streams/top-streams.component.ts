@@ -42,7 +42,7 @@ export class TopStreamsComponent implements OnInit {
   }
   LikePost(post: any) {
     this.postService.addLike(post).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.socket.emit('refresh', {});
     }, err => {
       console.log(err);

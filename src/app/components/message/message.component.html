@@ -4,7 +4,13 @@
       <div class="card">
         <div class="valign-wrapper" style="background-color: rgb(10, 92, 92) !important">
           <div class="col s12 imgCol">
-            <img src="http://placehold.it/50*50" class="circle responsive-img" />
+            <img
+              *ngIf="receiverData"
+              src="https://res.cloudinary.com/dgthwirla/image/upload/s--V48z2Bz0--/v{{ receiverData.picVersion }}/{{
+                receiverData.picId
+              }}"
+              class="imgCircle responsive-img"
+            />
           </div>
           <div class="row">
             <div class="col s12 nameCol">

@@ -1,0 +1,80 @@
+.card-image {
+  height: 200px;
+}
+
+.imgDiv {
+  display: block;
+  position: relative;
+}
+
+.imgCircle {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  margin: 0 auto !important;
+  top: 20px !important;
+}
+
+.title {
+  font-size: 21px;
+  font-weight: 700;
+  color: rgb(10, 92, 92);
+  margin-bottom: 0px !important;
+  bottom: 0 !important;
+}
+
+.cityName {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: -1px !important;
+}
+
+.post {
+  font-weight: bold;
+  color: rgb(10, 92, 92);
+}
+
+.postImage {
+  width: 100% !important;
+  margin: 0 auto !important;
+  left: 20px !important;
+  top: 10px !important;
+}
+
+.card_image {
+  width: 200px;
+  height: auto !important;
+}
+
+.tabs a {
+  color: rgb(10, 92, 92) !important;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tabs .col .s4 {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+.tabs a .indicator {
+  background-color: rgb(10, 92, 92) !important;
+}
+
+.collection {
+  border: none !important;
+}
+
+.collection-item {
+  border: none !important;
+}
+
+.scroll-y {
+  background: #ffffff !important;
+  height: 61vh !important;
+  max-height: 62vh !important;
+  min-height: 50vh !important;
+  overflow-y: scroll !important;
+  top: 0px;
+  margin-top: -20px !important;
+}

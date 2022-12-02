@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
@@ -40,6 +39,7 @@ export class PeopleComponent implements OnInit {
     this.userService.GetAllUsers().subscribe(data => {
       _.remove(data.results, { username: this.username })
       this.users = data.results;
+      // console.log(this.users)
 
     })
   }
@@ -58,8 +58,20 @@ export class PeopleComponent implements OnInit {
   FollowUser(_user: any) {
     this.userService.FollowUser(_user._id).subscribe(data => {
       this.socket.emit('refresh', {});
-
+    }, err => {
+      console.log(err);
     })
+  }
+  ViewUser(user: any) {
+    console.log(user.username);
+    this.router.navigate([user.username]);
+    if (this.token.username !== user.username) {
+      this.userService.ProfileNotification(user._id).subscribe((data) => {
+        this.socket.emit('refresh', {});
+      }, err => {
+        console.log(err);
+      })
+    }
   }
   CheckedArray(arr: any, id: any) {
     const result = _.find(arr, ['userFollowed._id', id]);

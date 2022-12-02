@@ -7,7 +7,13 @@
     <div class="col s12 m8 l9">
       <ul class="collection col s12 m10" *ngIf="notifications.length > 0">
         <li class="collection-item avatar" *ngFor="let data of notifications">
-          <img src="https://cdn.britannica.com/56/148856-004-2F59E2D9/APJ-2008.jpg" alt="" class="circle" />
+          <img
+            src="https://res.cloudinary.com/dgthwirla/image/upload/s--V48z2Bz0--/v{{ data.senderId.picVersion }}/{{
+              data.senderId.picId
+            }}"
+            alt=""
+            class="circle"
+          />
           <span class="title">{{ data.message }}</span>
           <a class="secondary-content">
             <i *ngIf="!data.read" class="material-icons">brightness_1</i>

@@ -23,6 +23,8 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   count: any = [] || undefined;
   chatList: any = [] || undefined;
   msgNumber: any = 0;
+  imageId: any;
+  imageVersion: any;
   // username: any;
   constructor(private tokenService: TokenService, private router: Router, private userService: UsersService, private route: ActivatedRoute,
     private messageService: MessageService) {
@@ -87,12 +89,15 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   GetUser() {
     this.userService.GetUserById(this.token._id).subscribe(data => {
       // console.log(data);
+      this.imageId = data.results.picId;
+      this.imageVersion = data.results.picVersion
       this.notifications = data.results.notifications.reverse();
       const value = _.filter(this.notifications, ['read', false]);
       this.count = value;
       this.chatList = data.results.chatList;
+      // console.log(this.chatList);
       this.CheckIfRead(this.chatList);
-      console.log(this.msgNumber);
+      // console.log(this.msgNumber);
       // console.log(this.chatList);
     }, err => {
       if (err.error.token == null) {
@@ -105,6 +110,7 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
     return moment(time).fromNow();
   }
   CheckIfRead(arr: any) {
+    // console.log(arr);
     const checkArray = [];
     for (let i = 0; i < arr.length; i++) {
       const receiver = arr[i].msgId.message[arr[i].msgId.message.length - 1];
